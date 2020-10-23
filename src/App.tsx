@@ -123,7 +123,7 @@ const Content = styled.div<{ warn: boolean }>`
     bottom: -4px;
     right: 16px;
     transform: rotate(45deg);
-    border-radius: 2px;
+    border-radius: 4px;
 
     z-index: -1;
   }
