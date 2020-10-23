@@ -4,6 +4,16 @@ import { Flex, Text } from "@dailykit/ui";
 import "./App.css";
 import { convertRange } from "./utils/convertRange";
 
+type RangerProps = {
+  min: number;
+  max: number;
+  value: number;
+  minLabel: string;
+  maxLabel: string;
+  label: string;
+  unit?: string;
+};
+
 export default function App() {
   return (
     <div className="App">
@@ -20,15 +30,15 @@ export default function App() {
   );
 }
 
-const Ranger: React.FC<{
-  min: number;
-  max: number;
-  value: number;
-  minLabel: string;
-  maxLabel: string;
-  label: string;
-  unit?: string;
-}> = ({ min, max, value, minLabel, maxLabel, unit, label }) => {
+const Ranger: React.FC<RangerProps> = ({
+  min,
+  max,
+  value,
+  minLabel,
+  maxLabel,
+  unit,
+  label,
+}) => {
   // convert from range [min..max] to range [0..90], 10% is taken.
   const greenWidth = convertRange(min, max, value, 0, 90);
 
